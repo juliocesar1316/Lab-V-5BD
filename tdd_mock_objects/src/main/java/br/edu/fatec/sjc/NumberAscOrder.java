@@ -1,19 +1,22 @@
 package br.edu.fatec.sjc;
 
 import java.util.List;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class NumberAscOrder {
-    private CustomStack<? extends Comparable> stack;
+    private final CustomStack<? extends Number> stack;
 
-    public NumberAscOrder(CustomStack<? extends Comparable> stack) {
+    public NumberAscOrder(CustomStack<? extends Number> stack) {
         this.stack = stack;
     }
 
-    public List<? extends Comparable> sort() {
-        List<? extends Comparable> list = stack.toList(); 
-        Collections.sort(list);
-        return list;
+    public List<Number> sort() {
+        
+        List<Number> numberList = new ArrayList<>(stack.toList());
+        numberList.sort(Comparator.comparingDouble(Number::doubleValue));
+        
+        return numberList;
     }
 }
