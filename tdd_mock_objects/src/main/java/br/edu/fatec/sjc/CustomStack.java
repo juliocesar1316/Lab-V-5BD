@@ -31,6 +31,10 @@ public class CustomStack<T extends  Number> {
         return this.elements.remove(--index);
     }
 
+    public List<T> toList() {
+        return new ArrayList<>(this.elements);
+    }
+
     public boolean isEmpty() {
         return this.elements.isEmpty();
     }

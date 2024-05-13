@@ -12,7 +12,7 @@ public class NumberAscOrder {
     }
 
     public List<? extends Comparable> sort() {
-        List<? extends Comparable> list = stack.toList(); // Presumindo que CustomStack tenha um método toList()
+        List<? extends Comparable> list = stack.toList(); 
         Collections.sort(list);
         return list;
     }
